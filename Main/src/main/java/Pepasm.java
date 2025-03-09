@@ -1,9 +1,8 @@
-//code made by Evan Drake and Jemery Escobar
+//code made by Evan Drake and Jeremy Escobar
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Pepasm {
     public static void main(String[] args) {
@@ -97,6 +96,15 @@ public class Pepasm {
                         System.out.print("C0 ");
                     }
                     break;
+
+                case "ANDA":
+                    if (assemblyWords.get(i +2).equals("d")) {
+                        System.out.print("81 ");
+                    }else{
+                        System.out.print("80 ");
+                    }
+                    break;
+
                 case "ADDA":
                     if (assemblyWords.get(i + 2).equals("d")) {
                         System.out.print("61 ");
@@ -104,12 +112,15 @@ public class Pepasm {
                         System.out.print("60 ");
                     }
                     break;
+
                 case "ASLA":
                     System.out.print("0A ");
                     break;
+
                 case "ASRA":
                     System.out.print("0C ");
                     break;
+
                 case "CPBA":
                     if (assemblyWords.get(i + 2).equals("d")) {
                         System.out.print("B1 ");
@@ -117,15 +128,19 @@ public class Pepasm {
                         System.out.print("B0 ");
                     }
                     break;
+
                 case "BRNE":
                     System.out.print("1A 00 03 ");
                     break;
+
                 case "STOP":
                     System.out.print("00 ");
                     break;
+
                 case ".END":
                     System.out.print("zz ");
                     break;
+
                 default:
                     System.out.print("");
             }
